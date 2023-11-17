@@ -4,13 +4,13 @@ abcxyz_excel_tg
 tg bot that make analysis of excel file
 
 ![logo](https://github.com/RRelaxeDD/abcxyz_tg_bot/blob/main/imgs/ABCXYZ_logo.png)
-
+<img src="https://github.com/RRelaxeDD/abcxyz_tg_bot/blob/main/imgs/ABCXYZ_logo.png" style="width: 200px">
 
 # Example
 
 this is how it works
 
-![logo](https://github.com/RRelaxeDD/abcxyz_tg_bot/blob/main/imgs/example.png)
+![logo](https://github.com/RRelaxeDD/abcxyz_tg_bot/blob/main/imgs/tg_example.jpg)
 
 
 ### How to run
