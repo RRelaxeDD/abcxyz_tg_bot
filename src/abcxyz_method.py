@@ -1,9 +1,10 @@
 import matplotlib.pyplot as pyplot
 import matplotlib
 import openpyxl
-import io
+
 from string import ascii_uppercase
 from datetime import datetime
+import io
 
 
 
@@ -229,7 +230,7 @@ def abcmethod(file) -> [io.BytesIO, io.BytesIO]:
             sheet[f'{perem_xyz}{num + 3}'] = res_xyz
 
 
-        # concatinate abc and xyz
+        # concatenate abc and xyz
         for i in range(3, lenoflist+1):
             xyz_abc = category[i-3]+xyz_value[i-3]
             abc_xyz.append(xyz_abc)
@@ -266,7 +267,8 @@ def abcmethod(file) -> [io.BytesIO, io.BytesIO]:
         display_x_b_digit = []
         display_x_c_digit = []
 
-        # Добавляет данные в листы для отображения диаграммы
+
+        # prepare data for diagram
         for i, j, k in zip(alpha_forallthings, list_to_sort, koef_value):
             if i == 'A':
                 display_range_a.append(i)
@@ -283,7 +285,8 @@ def abcmethod(file) -> [io.BytesIO, io.BytesIO]:
                 display_range_cdigit.append(j[0])
                 display_x_c_digit.append(k)
 
-        # Создает отметки на диаграмме
+
+        # make tics on diagram
         y_things1 = ['', 'A', '', 'B', '', 'C']
         x_things1 = ['X', '', 'Y', '', 'Z', '']
         y_things2 = [
@@ -293,10 +296,8 @@ def abcmethod(file) -> [io.BytesIO, io.BytesIO]:
                     ]
         x_things2 = [5, 10, 17, 25, (max(koef_value)-25)/2+25, max(koef_value)]
 
-        # Добавляет данные на диаграмму
-        # pyplot.
+        # add data to diagram and save it
         matplotlib.use('agg')
-
         pyplot.grid()
         pltt = pyplot
         pltt.scatter(x=display_x_a_digit, y=display_range_adigit, s=4, c='red')
@@ -310,4 +311,6 @@ def abcmethod(file) -> [io.BytesIO, io.BytesIO]:
         diagram = io.BytesIO(diagram.getvalue())
         diagram.name =  f"abcxyz_method_{str(datetime.now())[:16].replace('-', '_').replace(' ', '_').replace(':', '_')}.pdf"
         pltt.close()
+
+        # return [xlsx, diagram.pdf]
         return [new_file, diagram]
