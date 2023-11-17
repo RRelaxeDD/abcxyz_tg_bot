@@ -9,7 +9,7 @@ tg bot that make analysis of excel file
 
 this is how it works
 
-![logo](https://github.com/RRelaxeDD/abcxyz_tg_bot/blob/main/imgs/tg_example.jpg)
+<img src="https://github.com/RRelaxeDD/abcxyz_tg_bot/blob/main/imgs/tg_example.jpg" style="height: 400px">
 
 
 ### How to run
